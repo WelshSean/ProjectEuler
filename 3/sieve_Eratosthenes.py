@@ -24,7 +24,7 @@ def sieve_Eratosthenes(n):
             if numbers[i] == "Prime":
                 p = i
                 foundPrime = True
-                print "Found Prime: " + str(i) 
+#                print "Found Prime: " + str(i) 
                 break
 
         # pick out primes
@@ -35,7 +35,6 @@ def sieve_Eratosthenes(n):
        
     return primes
         
-
     
     
 
