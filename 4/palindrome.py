@@ -15,6 +15,18 @@ def isPalindrome(n):
     else:
         return False
 
+def findPal():
+    palindromes = []
+    for i in range(999, 100, -1):
+        for j in range(999, 100, -1):
+            product = i * j
+            if isPalindrome(product):
+                palindromes.append(product)
+    palindromes.sort()
+    return palindromes[-1]
 
-print isPalindrome(3456)
-print isPalindrome(14841)
+
+print findPal()
+
+#print isPalindrome(3456)
+#print isPalindrome(14841)
