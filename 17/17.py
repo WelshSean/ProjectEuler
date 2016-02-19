@@ -24,14 +24,15 @@ def num2words(num):
                   12 : "twelve",
                   13 : "thirteen",
                   14 : "fourteen",
-                  15 : "sixteen",
+                  15 : "fifteen",
+                  16 : "sixteen",
                   17 : "seventeen",
                   18 : "eighteen",
                   19 : "nineteen"}
 
     tenlookup = { 2 : "twenty",
                   3 : "thirty",
-                  4 : "fourty",
+                  4 : "forty",
                   5 : "fifty",
                   6 : "sixty",
                   7 : "seventy",
@@ -80,6 +81,33 @@ def num2words(num):
       
     return numstring
 
-for test in [1000, 1100, 1200, 1213, 1250, 1254, 1209, 1, 27, 100, 10, 109, 127]:
-    print test, num2words(test)
+#for test in [1000, 1100, 1200, 1213, 1250, 1254, 1209, 1, 27, 100, 10, 109, 127]:
+#    print test, num2words(test)
 
+
+def countLetters(string):
+    count = 0
+    for i in string:
+       if i not in [" ", "-"]:
+           count +=1
+
+    return count
+
+#for test in ["five", " five", " five ", "five-five", "-five", " -five" ]:
+#    print test, countLetters(test)
+
+
+def countNumList(n):
+    chars = 0
+    for i in range(1, n+1):
+        chars += countLetters( num2words(i) )
+
+    return chars
+
+# print countLetters( num2words(342) )
+# print  num2words(342) 
+
+# print countLetters( num2words(115) )
+
+print countNumList(5)
+print countNumList(1000)

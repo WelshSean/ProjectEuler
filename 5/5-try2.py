@@ -12,18 +12,18 @@ def findUniqFactors(n):
     while index > 0:
         dellist = []
         for j in range(index - 1, 0, -1):
-            print j
             if numlist[index] % numlist[j] == 0:
-               print index, numlist[index], j, numlist[j]
                dellist.append(j)
         for ii in dellist:
            del numlist[ii]
-        print numlist  
-        index -= 1 
+        if len(dellist) != 0:
+            index = len(numlist) - 1
+        else:
+            index -= 1
     return numlist
 
 def isEvDiv(testnum,n):
-    for i in range(1, n+1):
+    for i in findUniqFactors(n) :
         if testnum % i != 0:
             return False
     return True
@@ -42,9 +42,10 @@ def chkEvDiv(n):
 
 
 
-#print chkEvDiv(10)
-#print chkEvDiv(20)
-print findUniqFactors(10)
+print chkEvDiv(10)
+print chkEvDiv(20)
+#print findUniqFactors(10)
+#print findUniqFactors(20)
  
 
 
